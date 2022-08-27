@@ -22,7 +22,7 @@ pipeline{
         stage("running"){
             steps{
                  echo "This is the running stage";
-                 sh 'ssh -T $GONSTEADY_PEM ubuntu@ec2-18-134-182-112.eu-west-2.compute.amazonaws.com'
+                 sh 'ssh -i -t $GONSTEADY_PEM ubuntu@ec2-18-134-182-112.eu-west-2.compute.amazonaws.com'
                  sh "sudo rm -rf /var/www/html"
                  sh "sudo git -C /var/www/html pull"
             }

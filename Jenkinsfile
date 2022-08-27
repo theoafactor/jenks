@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         AUTHOR_NAME="James"
-        GONSTEADY_PEM = credentials("gonsteady_pem")
+        GONSTEADY_PEM = credentials("gonsteady1")
     }
     parameters{
         choice(name: "VERSION", choices: ["1.1.0", "1.1.1"])

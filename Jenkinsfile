@@ -2,7 +2,6 @@ pipeline{
     agent any
     environment{
         AUTHOR_NAME="James"
-        GONSTEADY_PEM = credentials("gonsteady1")
     }
     parameters{
         choice(name: "VERSION", choices: ["1.1.0", "1.1.1"])
@@ -21,10 +20,7 @@ pipeline{
 
         stage("running"){
             steps{
-                 echo "This is the running stage";
-                 sh 'ssh -i password ubuntu@ec2-18-134-182-112.eu-west-2.compute.amazonaws.com'
-                 sh "sudo rm -rf /var/www/html"
-                 sh "sudo git -C /var/www/html pull"
+                 echo "This is the running stage"
             }
         }
 
